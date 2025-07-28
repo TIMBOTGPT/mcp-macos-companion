@@ -1,0 +1,17 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "a027e1f34de3b139d84dc3e520fc5503244f4bfb5b9a8d2995371a06f20113fa"
+build_start_time: [1753574938, 223044000]
+build_end_time: [1753574943, 102730000]
+inputs:
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ActionComponents.swift": [1753447369, 221888702]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/FloatingVoiceWindow.swift": [1753574928, 381913219]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MCPCompanionApp.swift": [1753508984, 614777083]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MenuBarContentView.swift": [1753508994, 264737269]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/PreferencesView.swift": [1753447369, 226167108]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/QuickActionsView.swift": [1753509010, 305948989]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceMonitor.swift": [1753447369, 226909398]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceStatusView.swift": [1753447369, 227472105]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/VoiceRecordingView.swift": [1753447369, 228496811]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowEditView.swift": [1753447369, 229093893]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowModels.swift": [1753447369, 229477476]
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowsView.swift": [1753447369, 229861100]

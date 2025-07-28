@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Voice Test Interface</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #007AFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            min-width: 120px;
+        }
+        button:hover {
+            background-color: #0056CC;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .recording {
+            background-color: #FF3B30 !important;
+        }
+        .recording:hover {
+            background-color: #D70015 !important;
+        }
+        .status {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .status.idle {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+        .status.recording {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .status.processing {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status.completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            min-height: 50px;
+        }
+        .service-info {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .file-upload {
+            margin: 20px 0;
+            text-align: center;
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 2px dashed #007AFF;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 MCP Voice Test Interface</h1>
+        
+        <div id="serviceInfo" class="service-info">
+            <strong>Loading service information...</strong>
+        </div>
+        
+        <div id="status" class="status idle">Ready to record</div>
+        
+        <div class="controls">
+            <button id="recordBtn" onclick="toggleRecording()">🎤 Start Recording</button>
+            <button id="checkStatusBtn" onclick="checkStatus()" disabled>📊 Check Status</button>
+        </div>
+        
+        <div class="file-upload">
+            <h3>📁 Or Upload Audio File:</h3>
+            <input type="file" id="audioFile" accept="audio/*" onchange="uploadFile()">
+            <button onclick="document.getElementById('audioFile').click()">Choose Audio File</button>
+        </div>
+        
+        <div class="results">
+            <h3>📝 Transcription Results:</h3>
+            <div id="transcriptionResults">No transcription yet...</div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8085';
+        let currentSessionId = null;
+        let isRecording = false;
+
+        // Load service info on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadServiceInfo();
+        });
+
+        async function loadServiceInfo() {
+            try {
+                const response = await fetch(`${API_BASE}/info`);
+                const data = await response.json();
+                
+                const infoHtml = `
+                    <strong>Service Status:</strong> ✅ Connected<br>
+                    <strong>Model:</strong> ${data.model_size}<br>
+                    <strong>Device:</strong> ${data.device}<br>
+                    <strong>Capabilities:</strong> ${data.capabilities.join(', ')}
+                `;
+                
+                document.getElementById('serviceInfo').innerHTML = infoHtml;
+            } catch (error) {
+                document.getElementById('serviceInfo').innerHTML = 
+                    '<span style="color: red;">⚠️ Could not connect to voice service</span>';
+            }
+        }
+
+        async function toggleRecording() {
+            if (!isRecording) {
+                await startRecording();
+            } else {
+                await stopRecording();
+            }
+        }
+
+        async function startRecording() {
+            try {
+                const response = await fetch(`${API_BASE}/recording/start`, {
+                    method: 'POST'
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentSessionId = data.session_id;
+                    isRecording = true;
+                    
+                    document.getElementById('recordBtn').textContent = '🛑 Stop Recording';
+                    document.getElementById('recordBtn').classList.add('recording');
+                    document.getElementById('status').className = 'status recording';
+                    document.getElementById('status').textContent = `Recording... (Session: ${currentSessionId})`;
+                    
+                    // Auto-stop after 10 seconds
+                    setTimeout(() => {
+                        if (isRecording) stopRecording();
+                    }, 10000);
+                } else {
+                    throw new Error('Failed to start recording');
+                }
+                
+            } catch (error) {
+                updateStatus('error', `Recording failed: ${error.message}`);
+            }
+        }
+
+        async function stopRecording() {
+            if (!currentSessionId) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/recording/stop/${currentSessionId}`, {
+                    method: 'POST'
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    isRecording = false;
+                    
+                    document.getElementById('recordBtn').textContent = '🎤 Start Recording';
+                    document.getElementById('recordBtn').classList.remove('recording');
+                    document.getElementById('checkStatusBtn').disabled = false;
+                    
+                    updateStatus('processing', 'Processing audio...');
+                    
+                    // Check status after a delay
+                    setTimeout(checkStatus, 3000);
+                } else {
+                    throw new Error('Failed to stop recording');
+                }
+                
+            } catch (error) {
+                updateStatus('error', `Stop recording failed: ${error.message}`);
+            }
+        }
+
+        async function checkStatus() {
+            if (!currentSessionId) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/recording/status/${currentSessionId}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.status === 'completed') {
+                    updateStatus('completed', 'Transcription completed!');
+                    displayResults(data.result);
+                    document.getElementById('checkStatusBtn').disabled = true;
+                } else if (data.status === 'processing') {
+                    updateStatus('processing', 'Still processing...');
+                    setTimeout(checkStatus, 2000);
+                } else if (data.status === 'error') {
+                    updateStatus('error', `Error: ${data.error}`);
+                }
+                
+            } catch (error) {
+                updateStatus('error', `Status check failed: ${error.message}`);
+            }
+        }
+
+        async function uploadFile() {
+            const fileInput = document.getElementById('audioFile');
+            const file = fileInput.files[0];
+            
+            if (!file) return;
+            
+            updateStatus('processing', 'Transcribing uploaded file...');
+            
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                const response = await fetch(`${API_BASE}/transcribe/file`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateStatus('completed', 'File transcription completed!');
+                    displayResults(data.transcription);
+                } else {
+                    throw new Error('Transcription failed');
+                }
+                
+            } catch (error) {
+                updateStatus('error', `File transcription failed: ${error.message}`);
+            }
+        }
+
+        function updateStatus(type, message) {
+            const statusElement = document.getElementById('status');
+            statusElement.className = `status ${type}`;
+            statusElement.textContent = message;
+        }
+
+        function displayResults(result) {
+            const resultsElement = document.getElementById('transcriptionResults');
+            
+            if (!result || !result.text) {
+                resultsElement.innerHTML = `
+                    <div style="color: #856404; background-color: #fff3cd; padding: 10px; border-radius: 4px;">
+                        No speech detected or audio was silent.
+                    </div>
+                `;
+                return;
+            }
+            
+            const html = `
+                <div style="background-color: white; padding: 15px; border-radius: 8px; border: 1px solid #dee2e6;">
+                    <h4>📝 Transcribed Text:</h4>
+                    <p style="font-size: 16px; font-weight: bold; color: #333; margin: 10px 0;">
+                        "${result.text}"
+                    </p>
+                    
+                    <div style="font-size: 12px; color: #6c757d; margin-top: 10px;">
+                        <strong>Language:</strong> ${result.language}<br>
+                        <strong>Confidence:</strong> ${(result.confidence * 100).toFixed(1)}%<br>
+                        <strong>Duration:</strong> ${result.duration.toFixed(1)}s<br>
+                        <strong>Segments:</strong> ${result.segments.length}
+                    </div>
+                </div>
+            `;
+            
+            resultsElement.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

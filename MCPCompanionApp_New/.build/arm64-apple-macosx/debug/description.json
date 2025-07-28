@@ -1,0 +1,442 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.MCPCompanion-arm64-apple-macosx16.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/sources",
+      "importPath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ActionComponents.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MCPCompanionApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MenuBarContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/PreferencesView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/QuickActionsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceStatusView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/VoiceRecordingView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowEditView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowModels.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "MCPCompanion",
+      "moduleOutputPath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/Modules/MCPCompanion.swiftmodule",
+      "objects" : [
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ActionComponents.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/MCPCompanionApp.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/MenuBarContentView.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/PreferencesView.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/QuickActionsView.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ServiceMonitor.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ServiceStatusView.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/VoiceRecordingView.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowEditView.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowModels.swift.o",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowsView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "MCPCompanion_main",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "mcpcompanionapp_new"
+      ],
+      "outputFileMapPath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ActionComponents.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/MCPCompanionApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/MenuBarContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/PreferencesView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/QuickActionsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ServiceMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ServiceStatusView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/VoiceRecordingView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowEditView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowModels.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/Modules/MCPCompanion.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ActionComponents.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MCPCompanionApp.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MenuBarContentView.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/PreferencesView.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/QuickActionsView.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceMonitor.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceStatusView.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/VoiceRecordingView.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowEditView.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowModels.swift",
+        "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowsView.swift"
+      ],
+      "tempsPath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "MCPCompanion" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MCPCompanion",
+      "-package-name",
+      "mcpcompanionapp_new",
+      "-incremental",
+      "-c",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ActionComponents.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MCPCompanionApp.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MenuBarContentView.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/PreferencesView.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/QuickActionsView.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceMonitor.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceStatusView.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/VoiceRecordingView.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowEditView.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowModels.swift",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowsView.swift",
+      "-I",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "MCPCompanion_main",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "mcpcompanionapp_new",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "MCPCompanion" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "enableAllTraits" : false
+  },
+  "writeCommands" : {
+    "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion-entitlement.plist"
+    },
+    "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ActionComponents.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MCPCompanionApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MenuBarContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/PreferencesView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/QuickActionsView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceMonitor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceStatusView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/VoiceRecordingView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowEditView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowModels.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowsView.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/sources"
+    },
+    "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ActionComponents.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/MCPCompanionApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/MenuBarContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/PreferencesView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/QuickActionsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ServiceMonitor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/ServiceStatusView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/VoiceRecordingView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowEditView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowModels.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.build/WorkflowsView.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/MCPCompanion.product/Objects.LinkFileList"
+    },
+    "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

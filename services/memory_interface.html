@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Memory Interface</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .search-section {
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #007AFF;
+        }
+        button {
+            background-color: #007AFF;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #0056CC;
+        }
+        button.secondary {
+            background-color: #6c757d;
+        }
+        button.secondary:hover {
+            background-color: #545b62;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .memory-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .memory-content {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .memory-meta {
+            font-size: 12px;
+            color: #6c757d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .similarity-score {
+            background-color: #007AFF;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+        }
+        .category-tag {
+            background-color: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-right: 5px;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .stats {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 MCP Memory Interface</h1>
+        
+        <div id="stats" class="stats">
+            <strong>Loading memory statistics...</strong>
+        </div>
+        
+        <div class="search-section">
+            <h3>🔍 Search Memories</h3>
+            <label for="searchQuery">Search Query:</label>
+            <input type="text" id="searchQuery" placeholder="Enter your search query..." />
+            
+            <label for="searchType">Search Type:</label>
+            <select id="searchType">
+                <option value="semantic">Semantic Search (AI-powered)</option>
+                <option value="text">Text Search (Keyword matching)</option>
+            </select>
+            
+            <label for="categoryFilter">Category Filter (optional):</label>
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+            </select>
+            
+            <label for="limitResults">Max Results:</label>
+            <input type="number" id="limitResults" value="10" min="1" max="50" />
+            
+            <button onclick="searchMemories()">Search</button>
+            <button onclick="loadStats()" class="secondary">Refresh Stats</button>
+        </div>
+        
+        <div class="search-section">
+            <h3>💾 Store New Memory</h3>
+            <label for="newContent">Content:</label>
+            <textarea id="newContent" rows="3" placeholder="Enter memory content..."></textarea>
+            
+            <label for="newCategory">Category:</label>
+            <input type="text" id="newCategory" placeholder="e.g., notes, ideas, tasks" />
+            
+            <label for="newTags">Tags (comma-separated):</label>
+            <input type="text" id="newTags" placeholder="e.g., important, work, personal" />
+            
+            <button onclick="storeMemory()">Store Memory</button>
+        </div>
+        
+        <div id="results" class="results"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8081';
+        
+        // Load statistics on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStats();
+            loadCategories();
+        });
+        
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/stats`);
+                const data = await response.json();
+                
+                const statsHtml = `
+                    <strong>Memory Statistics:</strong><br>
+                    📊 Total Memories: ${data.total_memories}<br>
+                    🔍 FAISS Index Size: ${data.faiss_index_size}<br>
+                    📂 Categories: ${Object.keys(data.category_counts).length}
+                `;
+                
+                document.getElementById('stats').innerHTML = statsHtml;
+            } catch (error) {
+                document.getElementById('stats').innerHTML = 
+                    '<span style="color: red;">⚠️ Could not load stats - Memory service may not be running</span>';
+            }
+        }
+        
+        async function loadCategories() {
+            try {
+                const response = await fetch(`${API_BASE}/categories`);
+                const data = await response.json();
+                
+                const categorySelect = document.getElementById('categoryFilter');
+                categorySelect.innerHTML = '<option value="">All Categories</option>';
+                
+                data.categories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category;
+                    option.textContent = category;
+                    categorySelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Failed to load categories:', error);
+            }
+        }
+        
+        async function searchMemories() {
+            const query = document.getElementById('searchQuery').value.trim();
+            if (!query) {
+                showError('Please enter a search query');
+                return;
+            }
+            
+            const searchType = document.getElementById('searchType').value;
+            const category = document.getElementById('categoryFilter').value;
+            const limit = parseInt(document.getElementById('limitResults').value);
+            
+            const endpoint = searchType === 'semantic' ? '/search' : '/text_search';
+            const payload = {
+                query: query,
+                limit: limit
+            };
+            
+            if (category) {
+                payload.category = category;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                displayResults(data.results, searchType);
+                
+            } catch (error) {
+                showError(`Search failed: ${error.message}`);
+            }
+        }
+        
+        async function storeMemory() {
+            const content = document.getElementById('newContent').value.trim();
+            if (!content) {
+                showError('Please enter memory content');
+                return;
+            }
+            
+            const category = document.getElementById('newCategory').value.trim() || 'general';
+            const tags = document.getElementById('newTags').value.trim()
+                .split(',').map(tag => tag.trim()).filter(tag => tag);
+            
+            const payload = {
+                content: content,
+                category: category,
+                tags: tags,
+                timestamp: Date.now() / 1000
+            };
+            
+            try {
+                const response = await fetch(`${API_BASE}/store`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                showSuccess(`Memory stored successfully! ID: ${data.id}`);
+                
+                // Clear form
+                document.getElementById('newContent').value = '';
+                document.getElementById('newCategory').value = '';
+                document.getElementById('newTags').value = '';
+                
+                // Refresh stats and categories
+                loadStats();
+                loadCategories();
+                
+            } catch (error) {
+                showError(`Failed to store memory: ${error.message}`);
+            }
+        }
+        
+        function displayResults(results, searchType) {
+            const resultsDiv = document.getElementById('results');
+            
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<div class="error">No memories found matching your query.</div>';
+                return;
+            }
+            
+            let html = `<h3>🎯 Search Results (${results.length} found)</h3>`;
+            
+            results.forEach(memory => {
+                const date = new Date(memory.timestamp * 1000).toLocaleString();
+                const score = searchType === 'semantic' ? memory.similarity_score : null;
+                
+                html += `
+                    <div class="memory-item">
+                        <div class="memory-content">${escapeHtml(memory.content)}</div>
+                        <div class="memory-meta">
+                            <div>
+                                <span class="category-tag">${memory.category}</span>
+                                ${memory.tags.map(tag => `<span class="category-tag">${tag}</span>`).join('')}
+                                <small>${date}</small>
+                            </div>
+                            ${score !== null ? `<span class="similarity-score">${(score * 100).toFixed(1)}%</span>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+        
+        function showError(message) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<div class="error">❌ ${message}</div>`;
+        }
+        
+        function showSuccess(message) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<div class="success">✅ ${message}</div>`;
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

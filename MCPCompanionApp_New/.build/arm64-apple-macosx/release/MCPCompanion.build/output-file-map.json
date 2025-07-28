@@ -1,0 +1,67 @@
+{
+  "": {
+    "dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MCPCompanion.d",
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MCPCompanion.o",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/master.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ActionComponents.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ActionComponents.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ActionComponents~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ActionComponents.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/FloatingVoiceWindow.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/FloatingVoiceWindow.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/FloatingVoiceWindow~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/FloatingVoiceWindow.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MCPCompanionApp.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MCPCompanionApp.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MCPCompanionApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MCPCompanionApp.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/MenuBarContentView.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MenuBarContentView.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MenuBarContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/MenuBarContentView.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/PreferencesView.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/PreferencesView.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/PreferencesView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/PreferencesView.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/QuickActionsView.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/QuickActionsView.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/QuickActionsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/QuickActionsView.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceMonitor.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ServiceMonitor.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ServiceMonitor~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ServiceMonitor.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/ServiceStatusView.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ServiceStatusView.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ServiceStatusView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/ServiceStatusView.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/VoiceRecordingView.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/VoiceRecordingView.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/VoiceRecordingView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/VoiceRecordingView.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowEditView.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowEditView.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowEditView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowEditView.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowModels.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowModels.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowModels~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowModels.swiftdeps"
+  },
+  "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/Sources/WorkflowsView.swift": {
+    "object": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowsView.swift.o",
+    "swiftmodule": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mark/Desktop/MCP STUFF/mcp-macos-companion/MCPCompanionApp_New/.build/arm64-apple-macosx/release/MCPCompanion.build/WorkflowsView.swiftdeps"
+  }
+}
